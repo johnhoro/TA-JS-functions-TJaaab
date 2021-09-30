@@ -1,7 +1,10 @@
 /*
 1. Create a function named `sayHello` that alerts a message `Hello World!`.
 */
-
+function sayHello() {
+  alert(`hello world!`);
+}
+sayHello();
 /*
 2. Create a function named `fullName` with the following steps:
 
@@ -11,6 +14,13 @@
   - Alert `fullName`
 */
 
+function fullName() {
+  let firstName = prompt(`Enter your first name`);
+  let lastName = prompt(`Enter your last name`);
+  let fullName = `${firstName}  ${lastName}`;
+  alert(fullName);
+}
+fullName();
 /*
 3. Create a function named `addTwoNumbers` with the following steps:
 
@@ -20,6 +30,13 @@
   - Alert `sum`
 */
 
+function addTwoNumbers() {
+  let firstNum = +prompt(`Enter the first number`);
+  let secondNum = +prompt(`Enter the second number`);
+  let sum = firstNum + secondNum;
+  alert(`the sum of two number is ${sum}`);
+}
+addTwoNumbers();
 /*
 4. Create a function named `getTable` with the following steps:
 
@@ -38,7 +55,12 @@
   9 * 9 = 81
   9 * 10 = 90
 */
-
+let num = +prompt(`Enter a number`);
+let sum = ``;
+for (i = 1; i <= num; i = i + 1) {
+  sum = sum * i;
+}
+console.log(sum);
 /*
 5. Create a function named `isLeapYear` with the following steps:
 
