@@ -11,9 +11,11 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(minutes, sec = 60) {
+  return minutes * sec;
 }
+minToSec();
+
 // - Execute the function with required parameter
 
 /* 2. 
@@ -26,9 +28,10 @@ isInRange(1, 10, 19); // false
 */
 
 // - Write a Function Decleration for above problem
-function isInRange() {
-  // Your code
+function isInRange(lower = 1, upper = 20, n) {
+  return n > lower || n < upper ? true : false;
 }
+isInRange();
 // - Execute the function with required parameter
 
 /* 2. calculateBMI
@@ -49,9 +52,20 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(weight, height) {
+  let bmi = weight / (height * height);
+  switch (true) {
+    case bmi < 18.5:
+      return console.log(`underweight ${bmi}`);
+    case bmi > 18.5 || bmi < 24.9:
+      return console.log(`normalweight ${bmi}`);
+    case bmi >= 25 || bmi <= 29.9:
+      return console.log(`overweight ${bmi}`);
+    case bmi >= 30:
+      return obese;
+  }
 }
+calculateBMI();
 
 /* 3. appropiateDrinks
 
@@ -64,9 +78,18 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+  if (age <= 14) {
+    return "drink fruit juice";
+  } else if (age <= 18) {
+    return "drink soda";
+  } else if (age <= 21) {
+    return "drink fruit-flavored beer";
+  } else {
+    return "drink throat-piercing vodka";
+  }
 }
+appropiateDrinks();
 
 /* 4. Add two numers or string
 
@@ -79,13 +102,20 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(num1, num2) {
+  if (num1 === Number(``) || num2 === Number(``)) {
+    return num1 + num2;
+  } else if ((num1, num2 === ``)) {
+    return num1 + num2;
+  } else if (num1 === Number(``) || num2 === ``) {
+    return "Enter valid values";
+  }
 }
+sum();
 
 // Function Test
 sum(2, 4); // 4
-sum('Arya', 'Stark'); // "Arya Stark"
-sum('Arya', 2); // Enter valid Values
+sum("Arya", "Stark"); // "Arya Stark"
+sum("Arya", 2); // Enter valid Values
 sum(null, 2); // Enter valid Values
 sum(undefined, 2); // Enter valid Values
